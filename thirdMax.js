@@ -3,7 +3,7 @@
  * @return {number}
  */
 var thirdMax = function(nums) {
-  let set = [...new Set(nums)].sort((a, b) => b - a); // NEED LINEAR
+  let set = [...new Set(nums)].sort((a, b) => b - a);
   return set[2] === undefined ? set[0] : set[2];
 };
 
