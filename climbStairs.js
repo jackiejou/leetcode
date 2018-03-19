@@ -3,16 +3,12 @@
  * @return {number}
  */
 const climbStairs = (n) => { // same as fibonacci
-  let a = 1; // first solution n = 1
-  let b = 0; // n = 0
-  let temp;
-  while (n >= 0){
-    temp = a;
-    a = a + b;
-    b = temp;
+  let a = 1, b = 0; // n = 0
+  while (n > 0) {
+    [a, b] = [a + b, a];
     n--;
   }
-  return b;
+  return a;
 };
 
 console.log(climbStairs(5));
