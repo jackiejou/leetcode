@@ -4,10 +4,10 @@
  */
 const majorityElement = (nums) => {
   let obj = {};
-  for (let i = 0; i < nums.length; i++) {
-    obj[nums[i]] ? obj[nums[i]]++ : obj[nums[i]] = 1;
-    if (obj[nums[i]] > nums.length / 2) {
-      return nums[i];
+  for (let num of nums) {
+    obj[num] ? obj[num]++ : obj[num] = 1;
+    if (obj[num] > nums.length / 2) {
+      return num;
     }
   }
 };
