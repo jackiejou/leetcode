@@ -5,9 +5,7 @@
 const containsDuplicate = (nums) => {
   let obj = {};
   for (let num of nums) {
-    if (obj[num]) {
-      return true;
-    }
+    if (obj[num]) return true;
     obj[num] = true;
   }
   return false;

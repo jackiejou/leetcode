@@ -4,17 +4,9 @@
  */
 const missingNumber = (nums) => {
   let arr = nums.sort((a, b) => a - b);
-  if (arr[nums.length - 1] !== nums.length) {
-    return nums.length;
-  }
-  if (arr[0] !== 0) {
-    return 0;
-  }
+  if (arr[nums.length - 1] !== nums.length) return nums.length;
   for (let i = 0; i < arr.length + 1; i++) {
-    let next = i + 1;
-    if (arr[i + 1] !== next) {
-      return next;
-    }
+    if (arr[i] !== i) return i;
   }
 };
 

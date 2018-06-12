@@ -7,9 +7,7 @@ const twoSum = (nums, target) => {
   let obj = {};
   let ans = [];
   nums.forEach((num, index) => { // for loop can early return
-    if (obj[target - num] !== undefined) {
-      ans = [obj[target - num], index];
-    }
+    if (obj[target - num] !== undefined) ans = [obj[target - num], index];
     obj[num] = index;
   });
   return ans;
