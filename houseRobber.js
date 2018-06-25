@@ -2,22 +2,21 @@
  * @param {number[]} nums
  * @return {number}
  */
-const rob = (nums) => { // Work in progress
-  if (!nums.length) {
-    return 0;
+const rob = (nums) => {
+  if (!nums.length) return 0;
+  if (nums.length === 1) return nums[0];
+  let num1 = nums[0];
+  // num2 max starting point
+  let num2 = Math.max(nums[0], nums[1]);
+  if (nums.length === 2) return num2;
+  let maxVal;
+  for (let i = 2; i < nums.length; i++) {
+    // Math.max(rob this house vs robbed previous house)
+    maxVal = Math.max(num1 + nums[i], num2);
+    num1 = num2;
+    num2 = maxVal;
   }
-  if (nums.length === 1) {
-    return nums[0];
-  }
-  let max = 0;
-  for (let i = 0; i < nums.length; i+=2) {
-    max += nums[i];
-  }
-  let next = 0;
-  for (let i = 1; i < nums.length; i+=2) {
-    next += nums[i];
-  }
-  return max > next ? max : next;
-};
+  return maxVal;
+}
 
-console.log(rob([1,2,1,2,0,0,1]));
+console.log(rob([2,1,1,2]));
